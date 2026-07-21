@@ -39,3 +39,25 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
+
+#sidebar section
+with st.sidebar:
+    st.header("Developer Information")
+    st.markdown("**Mohiuddin Mahady**")
+    st.text("BSc in CSE")
+    st.text("Mymensingh Engineering College(Affiliated with Dhaka University)")
+    col3,col4=st.columns([1,1])
+    with col3:
+        st.link_button("LinkedIn","https://www.linkedin.com/in/mohiuddin-mahady/",use_container_width=True)
+    with col4:
+        st.link_button("Github",'https://www.github.com/mahady13',use_container_width=True)
+    st.markdown("---")
+
+    st.header("ℹ️ About App")
+    st.write(
+        "This application uses a fine-tuned **ResNet-50** deep learning model to detect genuine and fraud Bangladeshi currency notes (500 BDT & 1000 BDT).")
+    st.markdown("---")
+
+    st.header("Dataset & Citation")
+    st.markdown("🔗 **[Main Dataset Source](https://doi.org/10.17632/gzzz5nrvbn.1)**")
+    st.caption("Afif, Afif; Shad, Muhaiminul Rashid (2026), “Bangladeshi Counterfeit Currency Image Dataset”, Mendeley Data, V1")
