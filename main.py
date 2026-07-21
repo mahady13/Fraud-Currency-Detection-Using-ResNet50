@@ -61,3 +61,9 @@ with st.sidebar:
     st.header("Dataset & Citation")
     st.markdown("🔗 **[Main Dataset Source](https://doi.org/10.17632/gzzz5nrvbn.1)**")
     st.caption("Afif, Afif; Shad, Muhaiminul Rashid (2026), “Bangladeshi Counterfeit Currency Image Dataset”, Mendeley Data, V1")
+
+#main page ui
+st.title("Fraud Currency Detection Using ResNet50")
+st.warning("⚠ **Note:** This model is trained specifically on **500 BDT and 1000 BDT** banknotes. Uploading other currency notes (e.g., 100, 200 BDT) or random images may produce inaccurate predictions.")
+
+img = st.file_uploader("Upload image", type=["jpg", "jpeg", "png"])
