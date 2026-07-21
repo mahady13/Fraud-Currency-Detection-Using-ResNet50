@@ -67,3 +67,33 @@ st.title("Fraud Currency Detection Using ResNet50")
 st.warning("⚠ **Note:** This model is trained specifically on **500 BDT and 1000 BDT** banknotes. Uploading other currency notes (e.g., 100, 200 BDT) or random images may produce inaccurate predictions.")
 
 img = st.file_uploader("Upload image", type=["jpg", "jpeg", "png"])
+if st.button("Predict",use_container_width=True,type="primary"):
+    if img is not None:
+        img_raw = Image.open(img).convert("RGB")
+
+        #breaking into two columns so ui looks fine
+        col1, col2 = st.columns([1, 1])
+
+        with col1:
+            st.subheader("Uploaded Picture")
+            st.image(img_raw, caption='Uploaded Image', use_container_width=True)
+
+        img_tensor = transform(img_raw).unsqueeze(0).to(device)
+
+        with torch.inference_mode():
+            pred = model(img_tensor)
+            probabilities = F.softmax(pred, dim=1)
+            confidence, predicted_class = torch.max(probabilities, dim=1)
+
+            score = confidence.item() * 100
+            class_name = label_encoder.inverse_transform([predicted_class.item()])[0]
+
+        with col2:
+            st.subheader("Prediction Result")
+            if score < 30.0:
+                st.warning(f"Warning: Unrecognized note or low confidence image! (Confidence: {score:.2f}%)")
+            else:
+                st.success(f"**Label:** {class_name}\n\n**Confidence:** {score:.2f}%")
+
+    else:
+        st.error("Please upload an image")
