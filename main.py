@@ -90,7 +90,7 @@ if st.button("Predict",use_container_width=True,type="primary"):
 
         with col2:
             st.subheader("Prediction Result")
-            if score < 30.0:
+            if score < 31.0:
                 st.warning(f"Warning: Unrecognized note or low confidence image! (Confidence: {score:.2f}%)")
             else:
                 st.success(f"**Label:** {class_name}\n\n**Confidence:** {score:.2f}%")

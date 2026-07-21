@@ -5,6 +5,10 @@ A deep learning-based web application for detecting genuine and counterfeit Bang
 The application currently supports **500 BDT** and **1000 BDT** banknotes and provides the predicted class along with the model's confidence score through an interactive Streamlit interface.
 
 ---
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-ff4b4b)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ## Features
 
