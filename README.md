@@ -29,7 +29,7 @@ The application currently supports **500 BDT** and **1000 BDT** banknotes and pr
 ### Main Interface
 
 <p align="center">
-<img src="assets/app.png" width="900">
+<img src="photo_6266929632665867318_w.jpg" width="900">
 </p>
 
 ---
